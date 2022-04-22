@@ -1,0 +1,13 @@
+.footer {
+    background-color: map-get($primary-color, '900' );
+    padding-block: 4.375rem;
+
+    img {
+        width: 6.25rem;
+        
+        @include media-breakpoint-up(md) {
+            width: 8.125rem;
+        }
+    }
+
+}

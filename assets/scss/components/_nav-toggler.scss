@@ -1,0 +1,50 @@
+.barbershop-navbar .barbershop-navbar-toggler {
+    padding: 0;
+    position: relative;
+    transition: all .3s ease-in-out;
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    &.collapsed .navbar-toggler-icon {
+        background-color: map-get($white-color, '900' );
+        &::before {
+            transform: translateY(0) translateX(0) rotate(0);
+        }
+        &::after {
+            transform: rotate(0);
+        }
+    }
+
+    .navbar-toggler-icon {
+        background-color: transparent;
+        border-radius: .125rem;
+        display: block;
+        height: .3125rem;
+        width: 2.1875rem;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            border-radius: inherit;
+            height: inherit;
+            width: inherit;
+            position: absolute;
+            left: 0;
+            background-color: map-get($white-color, '900' );
+            transition: 0.3s ease-in;
+            transform-origin: top left;
+        }
+
+        &::before {
+            top: -10px;
+            transform: translateY(-1px) translateX(7px) rotate(45deg);
+        }
+        &::after {
+            top: 10px;
+            transform: translateY(4px) translateX(4px) rotate(-45deg);
+        }
+    }
+}

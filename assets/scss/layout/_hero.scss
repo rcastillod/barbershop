@@ -1,0 +1,31 @@
+.hero {
+    background-image: url('../img/post-image.jpg');
+    background-size: cover;
+    background-position: center center;
+    display: grid;
+    place-items: center;
+    height: 80vh;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(map-get($primary-color, '900'), .3);
+        z-index: -1;
+    }
+
+    .hero__title {
+        text-align: center;
+        width: min(100% - 2rem, 43.75rem);
+        h1 {
+            color: map-get($white-color, '900' );
+            font-size:  clamp(map-get($sizes, '2x-large' ), 10vw ,map-get($sizes, '3x-large' ));
+            line-height: 1.5;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+/** Share */
+.share-button {
+    background-color: map-get($primary-color, '700' );
+    border-radius: $br;
+    color: map-get($white-color, '900' );
+    font-size: .875rem;
+    font-weight: map-get($text-fw, 'light' );
+    padding: .9375em 1.125em;
+    text-decoration: none;
+    transition: background 250ms ease-in-out;
+
+    @include media-breakpoint-up(md) {
+        font-size: map-get($sizes, 'medium' );
+    }
+
+    &:hover,
+    &:focus {
+        color: map-get($white-color, '900' );
+        background-color: map-get($white-color, '700' );
+    }
+}
+
+/* Pagination */
+.pagination {
+    .page-item {
+        
+        // General
+        .page-link {
+            color: map-get($primary-color, '900' );
+            font-weight: map-get($text-fw, 'light' );
+            &:hover,
+            &:focus {
+                background-color: map-get($primary-color, '900' );
+                box-shadow: none;
+                color: map-get($white-color, '900' );
+                @include media-breakpoint-up(md) {
+                    background-color: map-get($primary-color, '700' );
+                }
+            }
+        }
+
+        // Corner buttons
+        &:first-child {
+            a {
+                border-top-left-radius: $br;
+                border-bottom-left-radius: $br;
+            }
+        }
+        &:last-child {
+            a {
+                border-top-right-radius: $br;
+                border-bottom-right-radius: $br;
+            }
+        }
+
+        
+        // Disabled
+        &.disabled {
+            a {
+                color: map-get($primary-color, '700' );
+            }
+        }
+    }
+}

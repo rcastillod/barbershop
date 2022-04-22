@@ -1,0 +1,51 @@
+.blog {
+    padding-block-start: 3.125rem;
+    
+    @include media-breakpoint-up(md) {
+        padding-block-start: 6.25rem;
+    }
+
+    &__post {
+        color: map-get($primary-color, '700' );
+    }
+
+    &__meta {
+        margin-block-end: 2.5rem;
+        @include media-breakpoint-up(md) {
+            margin-block-end: 3.75rem;
+        }
+        span {
+            font-family: $heading-ff;
+            font-size: map-get($sizes, large );
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        font-weight: map-get($text-fw, 'light');
+        gap: 2.5rem;
+        letter-spacing: .0625rem;
+        line-height: 2.5;
+        margin-block-end: 3.75rem;
+        
+        @include media-breakpoint-up(md) {
+            gap: 3.75rem;
+        }
+
+        a {
+            color: map-get($secondary-color, '800' );
+            text-decoration: none;
+            transition: color 250ms ease-in-out;
+            &:hover,
+            &:focus {
+                color: map-get($secondary-color, '900' );
+            }
+        }
+    }
+
+    &__share {
+        display: flex;
+        gap: 1.25rem;
+    }
+}
